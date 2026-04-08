@@ -14,7 +14,7 @@
 <h3>Canvas Square</h3>
 
 <article> 
-    <canvas width="100" height="100"></canvas>
+    <canvas bind:this={canvas} width="100" height="100"></canvas>
 
     <nav>
         <label>
