@@ -1,5 +1,5 @@
 <script>
-let { initialCount: count = 0} = $props()
+let { initialCount: count = $bindable()} = $props()
 
 let doubled = $derived(count * 2)
 
@@ -13,4 +13,3 @@ let doubled = $derived(count * 2)
 </button>
 
 <span> Doubled: {doubled}</span>
-
