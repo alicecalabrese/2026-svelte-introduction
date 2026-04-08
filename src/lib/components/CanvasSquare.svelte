@@ -1,16 +1,16 @@
 <script>
-    import {onMount} from "svelte"
+    import {untrack } from 'svelte';
     let size = $state(50);
     let color = $state('#ff3e00');
 
     let canvas;
     
-    onMount(() => {
-           const context = canvas.getContext("2d");
-    context.clearRect(0, 0, canvas.width, canvas.height);
+    $effect(() => {
+        const context = canvas.getContext("2d");
+        context.clearRect(0, 0, canvas.width, canvas.height);
 
-    context.fillStyle = color;
-    context.fillRect(0, 0, size, size);
+        context.fillStyle = untrack(() => color);
+        context.fillRect(0, 0, size, size);
     });
 
 </script>
